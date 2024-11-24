@@ -23,12 +23,13 @@ library(GWmodel)
 # read data
 hh_data <- read.csv("../Data/HHData_111A.csv")
 bg_density <- read.csv("../Data/hh_bgDensity.csv")
+personal_data <- read.csv("../Data/PersonData_111A.csv")
 shapefile <- st_read("../Data/counties/counties.shp")
 
-# 
-head(hh_data)
-head(bg_density)
 
+# combine data
+combine_data <- left_join(personal_data, hh_data) %>% left_join(bg_density)
+head(combine_data)
 ```
 
 #### 2. 汇总区域数据

@@ -21,8 +21,9 @@ library(ggplot2)
 library(GWmodel)
 
 # read data
-hh_data <- read.csv("HHData_111A.csv")
-bg_density <- read.csv("hh_bgDensity.csv")
+hh_data <- read.csv("../Data/HHData_111A.csv")
+bg_density <- read.csv("../Data/hh_bgDensity.csv")
+shapefile <- st_read("../Data/counties/counties.shp")
 
 # 
 head(hh_data)
